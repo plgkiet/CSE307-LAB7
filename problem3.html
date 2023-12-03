@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Problem3</title>
+    <style type="text/css">
+        #a,
+        #b {
+            background-color: aliceblue;
+            width: 400px;
+            margin: 10px;
+            padding: 5px;
+            color: black;
+            border: 1px solid black;
+        }
+
+        #f,
+        #g {
+            color: blueviolet;
+        }
+    </style>
+    <script>
+        function change() {
+            document.querySelector("#a").style.backgroundColor = "yellow";
+            document.querySelector("#a").style.border = "1px solid green";
+            document.querySelector("#b").style.border = "1px solid green";
+            document.querySelector("#d, #e").style.border = "1px solid red";
+            document.querySelector("#e").style.border = "1px solid red";
+            document.querySelector("#d").style.textDecoration = 'none';
+            document.querySelector("#e").style.textDecoration = 'none';
+            document.querySelector("#f").style.color = "orange";
+            document.querySelector("#g").style.color = "orange";
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <p id="a">This is the first paragraph with class "example"</p>
+        <p id="b">Another paragraph with class "example"</p>
+        <p id="c">This is a regular paragraph</p>
+        <p><a id="d" href="#">Link with target attribute</a></p>
+        <p><a id="e" href="#">Another link with target attribute</a></p>
+        <h1 id="f">Title 1</h1>
+        <h2 id="g">Title 2</h2>
+        <button type="button" onclick="change()">Change</button>
+    </div>
+</body>
+
+</html>

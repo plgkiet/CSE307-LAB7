@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    line-height: 50px;
+}
+
+.alert1 {
+    padding: 10px;
+    background-color: red;
+    color: white;
+}
+
+.alert2 {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    margin-top: 10px;
+}
+
+.alert3 {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    margin-top: 10px;
+}
+
+.alert4 {
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    margin-top: 10px;
+}
+
+.closebtn {
+    position: relative;
+    float: right;
+    font-size: 40px; /* Increase the font size */
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    opacity: 0.8;
+}

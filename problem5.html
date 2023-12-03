@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Problem5</title>
+        <link rel="stylesheet" href="problem5.css">
+    </head>
+    <body>
+        <h2>Alert Messages</h2>
+        <p>Click on the "x" sympol to close the alert message.</p>
+        <div class="alert1">
+            <span class="closebtn" onclick="setTimeout(function() { this.parentElement.style.display = 'none'; }.bind(this), 5000);">&times;</span>
+            <strong>Danger! </strong>Indicates a dangerous or potentially negative action.
+        </div>
+        <div class="alert2">
+            <span class="closebtn" onclick="setTimeout(function() { this.parentElement.style.display = 'none'; }.bind(this), 5000);">&times;</span>
+            <strong>Success! </strong>Indicates a successful or positive action.
+        </div>
+        <div class="alert3">
+            <span class="closebtn" onclick="setTimeout(function() { this.parentElement.style.display = 'none'; }.bind(this), 5000);">&times;</span>
+            <strong>Info! </strong>Indicates a neutral informative change or action.
+        </div>
+        <div class="alert4">
+            <span class="closebtn" onclick="setTimeout(function() { this.parentElement.style.display = 'none'; }.bind(this), 5000);">&times;</span>
+            <strong>Warning! </strong>Indicates a warning that might need attention.
+        </div>
+    </body>
+</html>
+

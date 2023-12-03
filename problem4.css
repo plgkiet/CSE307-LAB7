@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.column {
+    float: left;
+}
+
+img {
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+}
+
+img:hover {
+    opacity: 1;
+}
+ 
+.row {
+    display: table;
+}
+
+img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+  
+img:hover {
+    opacity: 1;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+img#expandedImg {
+    position: relative;
+    left: 350px;
+}
+
+div#imageText {
+    position: relative;
+    left: 550px;
+}
+
+.closebtn {
+    position: relative;
+    left: 350px;
+    bottom: 280px;
+    color: black;
+    font-size: 40px; /* Increase the font size */
+    cursor: pointer;
+}

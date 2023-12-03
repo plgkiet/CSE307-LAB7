@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem6</title>
+    <style>
+        table#regis {
+            border: 1px solid black;
+        }
+
+        table#regis th,
+        table#regis td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .name,
+        .email,
+        .password,
+        .cpass,
+        .phnb,
+        .zip,
+        .country,
+        .birthday,
+        .gender {
+            width: 330px;
+            height: 35px;
+        }
+
+        .city,
+        .state {
+            height: 35px;
+        }
+
+        .address,
+        .comments {
+            width: 330px;
+        }
+
+        .country,
+        .gender {
+            background-color: #D0CCCB;
+        }
+
+        .submit {
+            height: 40px;
+            width: 100px;
+        }
+
+        #valiname,
+        #valiemail,
+        #valipass,
+        #confirmpass,
+        #valiphone {
+            color: red;
+            font-size: small;
+        }
+
+        .btn:hover {
+            color: aliceblue;
+        }
+    </style>
+    <script>
+        function validate() {
+            let isValid = true;
+
+            let name = document.forms["regis"]["fname"].value;
+            if (name === "") {
+                document.getElementById("valiname").innerHTML = "Please input your name";
+                isValid = false;
+            } else {
+                document.getElementById("valiname").innerHTML = "";
+            }
+
+            let email = document.forms["regis"]["email"].value;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            if (email === "" || !emailRegex.test(email)) {
+                document.getElementById("valiemail").innerHTML = "Please input a valid email";
+                isValid = false;
+            } else {
+                document.getElementById("valiemail").innerHTML = "";
+            }
+
+            let password = document.forms["regis"]["psw"].value;
+            if (password === "" || password.length < 6) {
+                document.getElementById("valipass").innerHTML = "Please input your password (min-length = 6)";
+                isValid = false;
+            } else {
+                document.getElementById("valipass").innerHTML = "";
+            }
+
+            let confirmPassword = document.forms["regis"]["cpass"].value;
+            if (confirmPassword !== password) {
+                document.getElementById("confirmpass").innerHTML = "Passwords do not match";
+                isValid = false;
+            } else {
+                document.getElementById("confirmpass").innerHTML = "";
+            }
+
+            let phoneNumber = document.forms["regis"]["phnb"].value;
+            if (phoneNumber === "" || phoneNumber.length < 10) {
+                document.getElementById("valiphone").innerHTML = "Please input your phone number";
+                isValid = false;
+            } else {
+                document.getElementById("valiphone").innerHTML = "";
+            }
+
+            return isValid; 
+        }  
+    </script>
+</head>
+
+<body>
+    <form name="regis" action="#" method="post">
+        <table id="regis">
+            <tr>
+                <th>Full Name*</th>
+                <td>
+                    <input type="text" class="name" name="fname" placeholder="Enter your full name" required>
+                    <p id="valiname"></p>
+                </td>
+            </tr>
+            <tr>
+                <th>Email*</th>
+                <td>
+                    <input type="text" class="email" name="email" placeholder="Enter your email" required>
+                    <p id="valiemail"></p>
+                </td>
+            </tr>
+            <tr>
+                <th>Password*</th>
+                <td>
+                    <input type="password" name="psw" class="password" placeholder="Enter your password" required>
+                    <p id="valipass"></p>
+                </td>
+            </tr>
+            <tr>
+                <th>Confirm Password*</th>
+                <td>
+                    <input name="cpass" type="password" class="cpass" required>
+                    <p id="confirmpass"></p>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone Number*</th>
+                <td>
+                    <input name="phnb" type="text" class="phnb" placeholder="Enter your phone number (only numbers)" required>
+                    <p id="valiphone"></p>
+                </td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td><textarea class="address" name="address" id="address" cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td><input class="city" type="text" name="city" placeholder="Enter your City"><span><b> State </b><input
+                            class="state" type="text" name="state" placeholder="Enter your State"></span></td>
+            </tr>
+            <tr>
+                <th>Zip/Postal Code</th>
+                <td><input class="zip" type="text" name="zip" placeholder="Enter your Zip/Postal Code"></td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>
+                    <select class="country" name="country">
+                        <option value="1" selected="selected">[Select your country]</option>
+                        <option value="2">Vietnam</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td><input class="birthday" type="date" id="birthday" name="birthday"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>
+                    <select class="gender" name="gender">
+                        <option value="1" selected="selected">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Starting date</th>
+                <td>
+                    <input name="starting" type="radio" value="Spring">Spring
+                    <input name="starting" type="radio" value="Summer">Summer
+                </td>
+            </tr>
+            <tr>
+                <th>Comments</th>
+                <td><textarea class="comments" name="comments" id="comments" cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button class="submit" type="submit" onclick="validate()"><b>Submit</b></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
